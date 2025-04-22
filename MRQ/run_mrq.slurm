@@ -27,4 +27,4 @@ export WANDB_API_KEY=028b65afa7cbbb082902c650f03bfd3801495a70
 export WANDB_MODE=offline
 
 
-python main.py --env Atari-Pong-v5 --seed 0 --total_timesteps 1000000 --device cuda 
+python main.py --env Atari-Alien-v5 --seed 0 --total_timesteps 1000000 --device cuda 
