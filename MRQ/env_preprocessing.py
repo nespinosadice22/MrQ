@@ -24,7 +24,7 @@ import utils
 # from dm_control.suite.wrappers import action_scale
 
 
-# 1. Makes environment, sets seeds, applies wrappers.
+# 1. Makes environment, sets sex: str | objecteds, applies wrappers.
 # 2. Unifies some basic attributes like action_dim, obs_shape.
 # 3. Tracks some basic information like episode timesteps and reward.
 class Env:
@@ -60,7 +60,7 @@ class Env:
         return state if self.remove_info else (state, info)
 
 
-    def step(self, action: int | float):
+    def step(self, action):
         next_state, reward, terminated, truncated, info = self.env.step(action)
 
         self.ep_total_reward += reward
@@ -82,7 +82,7 @@ class GymPreprocessing:
         self.action_space = self.env.action_space
 
 
-    def step(self, action: int | float):
+    def step(self, action):
         return self.env.step(action)
 
 
